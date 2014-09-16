@@ -17,6 +17,17 @@ import java.util.concurrent.TimeUnit;
  * @author <a href=mailto:striped@gmail.com>striped</a>
  * @todo Add JavaDoc
  * @created 05/08/2014 21:58
+
+Benchmark                          Mode  Samples  Score  Score error  Units
+o.k.e.h.HashBenchmark.t1_simple    avgt       30  3.082        0.059  ns/op
+o.k.e.h.HashBenchmark.t2_tuned     avgt       30  3.272        0.075  ns/op
+o.k.e.h.HashBenchmark.t3_fast      avgt       30  0.922        0.028  ns/op
+
+Benchmark                          Mode  Samples  Score  Score error  Units
+o.k.e.h.HashBenchmark.t1_simple    avgt       30  3.070        0.064  ns/op
+o.k.e.h.HashBenchmark.t2_tuned     avgt       30  3.252        0.041  ns/op
+o.k.e.h.HashBenchmark.t3_fast      avgt       30  0.928        0.028  ns/op
+
  */
 @BenchmarkMode({Mode.AverageTime})
 @OutputTimeUnit(TimeUnit.NANOSECONDS)

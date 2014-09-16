@@ -25,6 +25,6 @@ public class ProxyFactory1Test {
 	@Test
 	public void testSayMeow() {
 		final Cat proxy = new SpringAOPProxyFactory(true).newProxy(new BlackCat());
-		assertThat(new BlackCat().sayMeow(), is(proxy.sayMeow()));
+		assertThat(new BlackCat().sayMeow(1), is(proxy.sayMeow(1)));
 	}
 }

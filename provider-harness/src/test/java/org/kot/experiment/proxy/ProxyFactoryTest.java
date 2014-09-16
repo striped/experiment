@@ -47,7 +47,7 @@ public class ProxyFactoryTest {
 	@Test
 	public void testSayMeow() {
 		final Cat proxy = factory.newProxy(object);
-		assertThat(new BlackCat().sayMeow(), is(proxy.sayMeow()));
+		assertThat(new BlackCat().sayMeow(1), is(proxy.sayMeow(1)));
 	}
 
 	@Test

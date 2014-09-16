@@ -8,6 +8,7 @@ public interface Cat {
 	/**
 	 * Method to be proxied.
 	 * @return something, no really matter
+	 * @param i
 	 */
-	int sayMeow();
+	int sayMeow(final int i);
 }
