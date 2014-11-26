@@ -1,0 +1,29 @@
+<BusinessLetter>
+	<OrderNumber>${orderNum}</OrderNumber>
+    <Head>
+        <SendDate>${date}</SendDate>
+        <Author>
+            <Name Title="Mr.">
+                <FirstName>A.N.</FirstName>
+                <LastName>One</LastName>
+            </Name>
+            <Company>${company}</Company>
+            <Address>
+                <Street>${address.firstline}</Street>
+                <City>${address.city}</City>
+                <County>${address.county}</County>
+                <Index>${address.index}</Index>
+                <Country>${address.country}</Country>
+            </Address>
+        </Author>
+    </Head>
+	<Subject>${subject}</Subject>
+	<Body>
+		<h1>Dear <b>${recepient}</b></h1>
+		<p>I appreciated your willingness to meet with the <b>${eventName}</b>. Your ideas and suggestions contributed immensely to the discussion. I am encouraged by the decisions
+			we made and anticipate the results will please the board. It is good to have you as part of the team. I am confident that good things will come from our joint efforts.
+		</p>
+		<p>Looking forward to seeing you again, A. N. One</p>
+		<image>${signature}</image>
+	</Body>
+</BusinessLetter>
