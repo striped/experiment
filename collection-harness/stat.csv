@@ -1,0 +1,21 @@
+"Benchmark","Mode","Threads","Samples","Score","Score Error (99.9%)","Unit","Param: size"
+"org.kot.experiment.collection.IteratorBenchmark.iterateOverEntry","avgt",1,9,9.588191,0.502829,"ns/op",1
+"org.kot.experiment.collection.IteratorBenchmark.iterateOverEntry","avgt",1,9,31.303721,2.347849,"ns/op",4
+"org.kot.experiment.collection.IteratorBenchmark.iterateOverEntry","avgt",1,9,53.489382,1.164601,"ns/op",8
+"org.kot.experiment.collection.IteratorBenchmark.iterateOverEntry","avgt",1,9,97.148921,5.986485,"ns/op",16
+"org.kot.experiment.collection.IteratorBenchmark.iterateOverEntry","avgt",1,9,362.681961,9.615712,"ns/op",64
+"org.kot.experiment.collection.IteratorBenchmark.iterateOverKey","avgt",1,9,16.890542,0.467420,"ns/op",1
+"org.kot.experiment.collection.IteratorBenchmark.iterateOverKey","avgt",1,9,50.619089,2.843305,"ns/op",4
+"org.kot.experiment.collection.IteratorBenchmark.iterateOverKey","avgt",1,9,94.556745,2.319087,"ns/op",8
+"org.kot.experiment.collection.IteratorBenchmark.iterateOverKey","avgt",1,9,183.963489,2.354954,"ns/op",16
+"org.kot.experiment.collection.IteratorBenchmark.iterateOverKey","avgt",1,9,743.515233,16.051194,"ns/op",64
+"org.kot.experiment.collection.IteratorBenchmark.iterateOverEntry","ss",1,9,3145.111111,815.747611,"ns/op",1
+"org.kot.experiment.collection.IteratorBenchmark.iterateOverEntry","ss",1,9,5135.555556,2160.436154,"ns/op",4
+"org.kot.experiment.collection.IteratorBenchmark.iterateOverEntry","ss",1,9,8332.777778,6126.014321,"ns/op",8
+"org.kot.experiment.collection.IteratorBenchmark.iterateOverEntry","ss",1,9,13268.888889,10724.447614,"ns/op",16
+"org.kot.experiment.collection.IteratorBenchmark.iterateOverEntry","ss",1,9,30753.666667,19100.305519,"ns/op",64
+"org.kot.experiment.collection.IteratorBenchmark.iterateOverKey","ss",1,9,3011.555556,848.201662,"ns/op",1
+"org.kot.experiment.collection.IteratorBenchmark.iterateOverKey","ss",1,9,10326.333333,30612.372135,"ns/op",4
+"org.kot.experiment.collection.IteratorBenchmark.iterateOverKey","ss",1,9,16236.333333,41029.655954,"ns/op",8
+"org.kot.experiment.collection.IteratorBenchmark.iterateOverKey","ss",1,9,14839.888889,20270.423876,"ns/op",16
+"org.kot.experiment.collection.IteratorBenchmark.iterateOverKey","ss",1,9,30940.000000,23227.114684,"ns/op",64
