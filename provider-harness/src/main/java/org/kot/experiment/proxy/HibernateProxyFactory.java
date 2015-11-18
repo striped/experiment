@@ -2,7 +2,7 @@ package org.kot.experiment.proxy;
 
 import org.hibernate.proxy.HibernateProxy;
 import org.hibernate.proxy.LazyInitializer;
-import org.hibernate.proxy.pojo.javassist.JavassistLazyInitializer;
+import org.hibernate.proxy.pojo.javassist.SerializableProxy;
 
 import java.lang.reflect.Field;
 import java.util.Arrays;
@@ -24,10 +24,13 @@ public class HibernateProxyFactory implements ProxyFactory {
 		final HashSet<Class<?>> faces = new HashSet<>(Arrays.asList(object.getClass().getInterfaces()));
 		faces.add(HibernateProxy.class);
 		final Class[] interfaces = faces.toArray(new Class[faces.size()]);
-		final T proxy = (T) JavassistLazyInitializer.getProxy(object.getClass().getSimpleName(), object.getClass(), interfaces, null, null, null, null, null);
+
+		final SerializableProxy pp = new SerializableProxy(object.getClass().getSimpleName(), object.getClass(), interfaces, null, false, null, null, null);
+		final T proxy = (T) org.hibernate.proxy.pojo.javassist.JavassistProxyFactory.deserializeProxy(pp);
 		final LazyInitializer initializer = ((HibernateProxy) proxy).getHibernateLazyInitializer();
 		init(initializer, "initialized", true);
 		init(initializer, "target", object);
+
 		return proxy;
 	}
 

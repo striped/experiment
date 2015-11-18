@@ -11,36 +11,33 @@
 
 	<artifactId>hash-harness</artifactId>
 
-	<name>hash-harness</name>
+	<name>Hash harness</name>
 
 	<build>
 		<plugins>
 			<plugin>
-				<artifactId>maven-compiler-plugin</artifactId>
-			</plugin>
-			<plugin>
-				<artifactId>maven-surefire-plugin</artifactId>
-			</plugin>
-			<plugin>
 				<artifactId>maven-shade-plugin</artifactId>
 			</plugin>
-
 		</plugins>
 	</build>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.openjdk.jmh</groupId>
+			<artifactId>jmh-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.openjdk.jmh</groupId>
 			<artifactId>jmh-generator-annprocess</artifactId>
 		</dependency>
 
 		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>org.hamcrest</groupId>
 			<artifactId>hamcrest-library</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
 		</dependency>
 	</dependencies>
 </project>

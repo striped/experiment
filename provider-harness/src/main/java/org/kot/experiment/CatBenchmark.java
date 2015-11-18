@@ -15,10 +15,6 @@ import org.openjdk.jmh.annotations.Param;
 import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.Warmup;
-import org.openjdk.jmh.runner.Runner;
-import org.openjdk.jmh.runner.RunnerException;
-import org.openjdk.jmh.runner.options.Options;
-import org.openjdk.jmh.runner.options.OptionsBuilder;
 
 import java.util.concurrent.TimeUnit;
 
@@ -87,9 +83,11 @@ import java.util.concurrent.TimeUnit;
  */
 @BenchmarkMode({Mode.AverageTime})
 @OutputTimeUnit(TimeUnit.NANOSECONDS)
-@Warmup(iterations = 10)
-@Measurement(iterations = 10)
-@Fork(3)
+@Warmup(iterations = 40, time = 1)
+@Measurement(iterations = 5)
+@Fork(value = 3, jvmArgsAppend = {"-server", "-disablesystemassertions", "-XX:+AggressiveOpts", "-XX:-DontCompileHugeMethods",
+                                  "-XX:CompileThreshold=1000", "-XX:Tier3CompileThreshold=2000", "-XX:Tier4CompileThreshold=3000"
+})
 @State(Scope.Benchmark)
 public class CatBenchmark {
 
@@ -107,8 +105,7 @@ public class CatBenchmark {
 
 	private Cat hibernate = new HibernateProxyFactory().newProxy(new BlackCat());
 
-	@Param({"00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19",
-	        "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39"})
+	@Param({"00", "02", "04", "08", "16", "32", "64"})
 	private int token;
 
 	@Benchmark
@@ -145,14 +142,4 @@ public class CatBenchmark {
 	public long t7_spring() {
 		return spring.sayMeow(token);
 	}
-
-	public static void main(String[] args) throws RunnerException {
-		Options opt = new OptionsBuilder()
-				.include(".*" + CatBenchmark.class.getSimpleName() + ".*")
-//				.verbosity(VerboseMode.EXTRA)
-				.build();
-
-	    new Runner(opt).run();
-	}
-
 }
