@@ -1,0 +1,9 @@
+"Benchmark","Mode","Threads","Samples","Score","Score Error (99.9%)","Unit","Param: size"
+"org.kot.experiment.table.ConstantVsLogarithmicBenchmark.forArray","avgt",1,9,70.376915,14.783350,"ns/op",1
+"org.kot.experiment.table.ConstantVsLogarithmicBenchmark.forArray","avgt",1,9,67.138810,1.253398,"ns/op",2
+"org.kot.experiment.table.ConstantVsLogarithmicBenchmark.forArray","avgt",1,9,68.353369,1.489140,"ns/op",4
+"org.kot.experiment.table.ConstantVsLogarithmicBenchmark.forArray","avgt",1,9,71.217847,2.847348,"ns/op",8
+"org.kot.experiment.table.ConstantVsLogarithmicBenchmark.forMap","avgt",1,9,74.978648,2.265034,"ns/op",1
+"org.kot.experiment.table.ConstantVsLogarithmicBenchmark.forMap","avgt",1,9,74.294392,2.621072,"ns/op",2
+"org.kot.experiment.table.ConstantVsLogarithmicBenchmark.forMap","avgt",1,9,72.634822,2.213571,"ns/op",4
+"org.kot.experiment.table.ConstantVsLogarithmicBenchmark.forMap","avgt",1,9,73.868775,2.337706,"ns/op",8

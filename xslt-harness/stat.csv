@@ -1,0 +1,7 @@
+"Benchmark","Mode","Threads","Samples","Score","Score Error (99.9%)","Unit"
+"org.kot.experiment.xml.TransformBenchmark.t1_dom","avgt",1,30,81.97150945569042,0.7455073073195334,"us/op"
+"org.kot.experiment.xml.TransformBenchmark.t1_xslt","avgt",1,30,102.99408505212469,0.8200606150880642,"us/op"
+"org.kot.experiment.xml.TransformBenchmark.t2_dom","avgt",2,30,87.95147538905762,1.587998471957896,"us/op"
+"org.kot.experiment.xml.TransformBenchmark.t2_xslt","avgt",2,30,111.30444244177455,2.156443066314001,"us/op"
+"org.kot.experiment.xml.TransformBenchmark.t4_dom","avgt",4,30,107.07590908718154,2.928876800059355,"us/op"
+"org.kot.experiment.xml.TransformBenchmark.t4_xslt","avgt",4,30,138.67243217643116,0.8127480122231812,"us/op"
