@@ -7,10 +7,8 @@ import org.junit.runners.Parameterized;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
-import static org.hamcrest.Matchers.iterableWithSize;
 import static org.junit.Assert.assertThat;
 
 /**
@@ -24,9 +22,13 @@ public class IntervalLookupBenchmarkTest {
 
 	private final int size;
 
-	private final List<Interval<String>> list;
+	private final List<Interval<String>> stringList;
 
-	private final IntervalTree<String> tree;
+	private final List<Interval<Integer>> intList;
+
+	private final IntervalTree<String> stringTree;
+
+	private final IntervalTree<Integer> intTree;
 
 	@Parameterized.Parameters(name = "{index}: Check {0}")
 	public static Iterable<Object[]> args() {
@@ -43,19 +45,22 @@ public class IntervalLookupBenchmarkTest {
 	public IntervalLookupBenchmarkTest(int size) {
 		this.size = size;
 		final int wide = 1000 / size;
-		list = new ArrayList<>(size);
+		stringList = new ArrayList<>(size);
+		intList = new ArrayList<>(size);
 		int start = 0;
 		for (; start < 1000; start += wide) {
-			list.add(new Interval<>(String.format("%05d", start), String.format("%05d", start + wide)));
+			stringList.add(new Interval<>(String.format("%05d", start), String.format("%05d", start + wide)));
+			intList.add(new Interval<>(start, start + wide));
 		}
-		tree = new IntervalTree<>(list);
+		stringTree = new IntervalTree<>(stringList);
+		intTree = new IntervalTree<>(intList);
 
 	}
 
 	@Test
 	public void testList() {
 		for (int i = 0; i < 1000; i++) {
-			final List<Interval<String>> result = IntervalLookupBenchmark.lookup(list, String.format("%05d", i));
+			final List<Interval<String>> result = IntervalLookupBenchmark.lookup(stringList, String.format("%05d", i));
 			assertThat(result, Matchers.<Interval<String>>iterableWithSize(1));
 		}
 	}
@@ -63,8 +68,26 @@ public class IntervalLookupBenchmarkTest {
 	@Test
 	public void testTree() {
 		for (int i = 0; i < 1000; i++) {
-			final List<Interval<String>> result = tree.intersect(String.format("%05d", i));
+			final List<Interval<String>> result = stringTree.intersect(String.format("%05d", i));
 			assertThat(result, Matchers.<Interval<String>>iterableWithSize(1));
+		}
+	}
+
+	@Test
+	public void testIntList() {
+		for (int i = 0; i < 1000; i++) {
+			int num = IntervalLookupBenchmark.parseInt(String.format("%05d", i));
+			final List<Interval<Integer>> result = IntervalLookupBenchmark.lookup(intList, num);
+			assertThat(result, Matchers.<Interval<Integer>>iterableWithSize(1));
+		}
+	}
+
+	@Test
+	public void testIntTree() {
+		for (int i = 0; i < 1000; i++) {
+			int num = IntervalLookupBenchmark.parseInt(String.format("%05d", i));
+			final List<Interval<Integer>> result = intTree.intersect(num);
+			assertThat(result, Matchers.<Interval<Integer>>iterableWithSize(1));
 		}
 	}
 }
