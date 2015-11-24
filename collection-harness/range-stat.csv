@@ -1,0 +1,25 @@
+"Benchmark","Mode","Threads","Samples","Score","Score Error (99.9%)","Unit","Param: size"
+"org.kot.experiment.range.IntervalLookupBenchmark.intList","avgt",1,9,36.767898,1.049357,"us/op",4
+"org.kot.experiment.range.IntervalLookupBenchmark.intList","avgt",1,9,51.733496,1.840213,"us/op",16
+"org.kot.experiment.range.IntervalLookupBenchmark.intList","avgt",1,9,72.393269,2.526813,"us/op",32
+"org.kot.experiment.range.IntervalLookupBenchmark.intList","avgt",1,9,118.037110,2.514985,"us/op",64
+"org.kot.experiment.range.IntervalLookupBenchmark.intList","avgt",1,9,200.725350,4.875521,"us/op",128
+"org.kot.experiment.range.IntervalLookupBenchmark.intList","avgt",1,9,456.198601,11.714233,"us/op",256
+"org.kot.experiment.range.IntervalLookupBenchmark.intTree","avgt",1,9,30.026825,1.174018,"us/op",4
+"org.kot.experiment.range.IntervalLookupBenchmark.intTree","avgt",1,9,33.477783,1.268354,"us/op",16
+"org.kot.experiment.range.IntervalLookupBenchmark.intTree","avgt",1,9,36.382833,0.976319,"us/op",32
+"org.kot.experiment.range.IntervalLookupBenchmark.intTree","avgt",1,9,38.898106,0.875861,"us/op",64
+"org.kot.experiment.range.IntervalLookupBenchmark.intTree","avgt",1,9,52.727909,2.031163,"us/op",128
+"org.kot.experiment.range.IntervalLookupBenchmark.intTree","avgt",1,9,84.576319,2.639254,"us/op",256
+"org.kot.experiment.range.IntervalLookupBenchmark.stringList","avgt",1,9,54.086556,1.368829,"us/op",4
+"org.kot.experiment.range.IntervalLookupBenchmark.stringList","avgt",1,9,116.787628,5.634022,"us/op",16
+"org.kot.experiment.range.IntervalLookupBenchmark.stringList","avgt",1,9,201.596381,2.982787,"us/op",32
+"org.kot.experiment.range.IntervalLookupBenchmark.stringList","avgt",1,9,394.031481,9.265881,"us/op",64
+"org.kot.experiment.range.IntervalLookupBenchmark.stringList","avgt",1,9,900.727354,140.651328,"us/op",128
+"org.kot.experiment.range.IntervalLookupBenchmark.stringList","avgt",1,9,2344.254949,654.990606,"us/op",256
+"org.kot.experiment.range.IntervalLookupBenchmark.stringTree","avgt",1,9,23.940332,0.314899,"us/op",4
+"org.kot.experiment.range.IntervalLookupBenchmark.stringTree","avgt",1,9,33.684791,0.507915,"us/op",16
+"org.kot.experiment.range.IntervalLookupBenchmark.stringTree","avgt",1,9,41.922920,0.835068,"us/op",32
+"org.kot.experiment.range.IntervalLookupBenchmark.stringTree","avgt",1,9,54.152467,2.424046,"us/op",64
+"org.kot.experiment.range.IntervalLookupBenchmark.stringTree","avgt",1,9,70.362361,2.260194,"us/op",128
+"org.kot.experiment.range.IntervalLookupBenchmark.stringTree","avgt",1,9,118.918048,4.436636,"us/op",256
